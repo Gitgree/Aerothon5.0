@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Form Example</title>
+    <br>
+    <link rel="stylesheet" href="styles.css">
+    <a href="img1.jpg"></a>
+  </head>
+  <body>
+    <header>
+      <h1>HELLO ON BOARDING</h1>
+    </header>
+    <div id="formContainer"></div>
+
+    <script>
+      
+      var partNames = ["Avionics", "Engine", "Fuselage", "Landing Gear"];
+      var materialOptions = ["Aluminium", "Composite", "Steel", "Titanium"];
+      var conditionOptions = ["New", "Used"];
+
+      var formContainer = document.getElementById("formContainer");
+      var form = document.createElement("form");
+      form.setAttribute("id", "myForm");
+
+      var selectPart = document.createElement("select");
+      selectPart.setAttribute("name", "partName");
+
+      for (var i = 0; i < partNames.length; i++) {
+        var option = document.createElement("option");
+        option.setAttribute("value", partNames[i]);
+        option.textContent = partNames[i];
+        selectPart.appendChild(option);
+      }
+
+      var inputAge = document.createElement("input");
+      inputAge.setAttribute("type", "text");
+      inputAge.setAttribute("name", "age");
+      inputAge.setAttribute("placeholder", "Enter age");
+
+      var selectMaterial = document.createElement("select");
+      selectMaterial.setAttribute("name", "materialComposition");
+
+      for (var i = 0; i < materialOptions.length; i++) {
+        var option = document.createElement("option");
+        option.setAttribute("value", materialOptions[i]);
+        option.textContent = materialOptions[i];
+        selectMaterial.appendChild(option);
+      }
+
+      var selectCondition = document.createElement("select");
+      selectCondition.setAttribute("name", "condition");
+
+      for (var i = 0; i < conditionOptions.length; i++) {
+        var option = document.createElement("option");
+        option.setAttribute("value", conditionOptions[i]);
+        option.textContent = conditionOptions[i];
+        selectCondition.appendChild(option);
+      }
+
+      var submitBtn = document.createElement("input");
+      submitBtn.setAttribute("type", "submit");
+      submitBtn.setAttribute("value", "Submit");
+
+      form.appendChild(selectPart);
+      form.appendChild(document.createElement("br"));
+      form.appendChild(inputAge);
+      form.appendChild(document.createElement("br"));
+      form.appendChild(selectMaterial);
+      form.appendChild(document.createElement("br"));
+      form.appendChild(selectCondition);
+      form.appendChild(document.createElement("br"));
+      form.appendChild(submitBtn);
+
+      formContainer.appendChild(form);
+    </script>
+  </body>
+</html>
